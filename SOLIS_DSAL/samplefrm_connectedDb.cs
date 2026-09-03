@@ -87,7 +87,7 @@ namespace SOLIS_DSAL
             openFileDialog1.ShowDialog();
             pictureBox1.Image = Image.FromFile(openFileDialog1.FileName); //inserting of selected image to the picturebox shown in the GUI interface
             picturepath = openFileDialog1.FileName;//storing the file location of the selected image inserted in picturebox to a variable
-            picturpathTxtbox.Text = picturepath; //displaying the file location of the image stored in a a variabl to the textbox
+            picturpathTxtbox.Text = picturepath; //displaying the file location of the image stored in a a variable to the textbox
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -228,6 +228,21 @@ namespace SOLIS_DSAL
 
             datagrid_display.DataSource = dset.Tables[0];
             connection.Close();
+        }
+
+        private void student_noTxtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void student_nameTxtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void student_departmentTxtbox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

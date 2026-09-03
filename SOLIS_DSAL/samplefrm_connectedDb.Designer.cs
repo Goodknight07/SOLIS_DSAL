@@ -72,6 +72,7 @@
             this.student_noTxtbox.Name = "student_noTxtbox";
             this.student_noTxtbox.Size = new System.Drawing.Size(216, 20);
             this.student_noTxtbox.TabIndex = 2;
+            this.student_noTxtbox.TextChanged += new System.EventHandler(this.student_noTxtbox_TextChanged);
             // 
             // student_nameTxtbox
             // 
@@ -79,6 +80,7 @@
             this.student_nameTxtbox.Name = "student_nameTxtbox";
             this.student_nameTxtbox.Size = new System.Drawing.Size(216, 20);
             this.student_nameTxtbox.TabIndex = 3;
+            this.student_nameTxtbox.TextChanged += new System.EventHandler(this.student_nameTxtbox_TextChanged);
             // 
             // student_departmentTxtbox
             // 
@@ -86,6 +88,7 @@
             this.student_departmentTxtbox.Name = "student_departmentTxtbox";
             this.student_departmentTxtbox.Size = new System.Drawing.Size(216, 20);
             this.student_departmentTxtbox.TabIndex = 5;
+            this.student_departmentTxtbox.TextChanged += new System.EventHandler(this.student_departmentTxtbox_TextChanged);
             // 
             // label3
             // 

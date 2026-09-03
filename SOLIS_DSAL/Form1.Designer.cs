@@ -1,6 +1,6 @@
 ﻿namespace SOLIS_DSAL
 {
-    partial class s
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -49,7 +49,6 @@
             this.emailTxtbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.MobileNOTxtbox = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.JobtitleCMB = new System.Windows.Forms.ComboBox();
             this.DepartmentCMB = new System.Windows.Forms.ComboBox();
@@ -59,6 +58,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.submitBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.birthdayTxtbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,13 +227,6 @@
             this.MobileNOTxtbox.Size = new System.Drawing.Size(264, 20);
             this.MobileNOTxtbox.TabIndex = 22;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(105, 154);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(531, 20);
-            this.dateTimePicker1.TabIndex = 23;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -291,6 +285,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(150, 98);
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // submitBtn
             // 
@@ -312,11 +307,23 @@
             this.exitBtn.UseVisualStyleBackColor = true;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
-            // s
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // birthdayTxtbox
+            // 
+            this.birthdayTxtbox.Location = new System.Drawing.Point(105, 154);
+            this.birthdayTxtbox.Name = "birthdayTxtbox";
+            this.birthdayTxtbox.Size = new System.Drawing.Size(531, 20);
+            this.birthdayTxtbox.TabIndex = 33;
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 339);
+            this.Controls.Add(this.birthdayTxtbox);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.pictureBox1);
@@ -326,7 +333,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.JobtitleCMB);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.MobileNOTxtbox);
             this.Controls.Add(this.emailTxtbox);
             this.Controls.Add(this.label7);
@@ -348,7 +354,7 @@
             this.Controls.Add(this.EFtxtbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.EIDtxtbox);
-            this.Name = "s";
+            this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.s_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -380,7 +386,6 @@
         private System.Windows.Forms.TextBox emailTxtbox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox MobileNOTxtbox;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox JobtitleCMB;
         private System.Windows.Forms.ComboBox DepartmentCMB;
@@ -390,6 +395,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox birthdayTxtbox;
     }
 }
 
