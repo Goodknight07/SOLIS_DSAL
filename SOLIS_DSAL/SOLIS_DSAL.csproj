@@ -52,6 +52,54 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LAB1_Midterm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LAB1_Midterm.Designer.cs">
+      <DependentUpon>LAB1_Midterm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LAB1_Midterm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LAB1_Midterm2.Designer.cs">
+      <DependentUpon>LAB1_Midterm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LAB1_Midterm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LAB1_Midterm3.Designer.cs">
+      <DependentUpon>LAB1_Midterm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LAB1_Midterm4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LAB1_Midterm4.Designer.cs">
+      <DependentUpon>LAB1_Midterm4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LAB1_Midterm5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LAB1_Midterm5.Designer.cs">
+      <DependentUpon>LAB1_Midterm5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LAB1_Midterm6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LAB1_Midterm6.Designer.cs">
+      <DependentUpon>LAB1_Midterm6.cs</DependentUpon>
+    </Compile>
     <Compile Include="pos_dbconnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,8 +111,38 @@
     </Compile>
     <Compile Include="sampleFrm_database_class.cs" />
     <Compile Include="sampleFrm_database_functions.cs" />
+    <Compile Include="SOLIS_QUIZ1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SOLIS_QUIZ1.Designer.cs">
+      <DependentUpon>SOLIS_QUIZ1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LAB1_Midterm.resx">
+      <DependentUpon>LAB1_Midterm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LAB1_Midterm2.resx">
+      <DependentUpon>LAB1_Midterm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LAB1_Midterm3.resx">
+      <DependentUpon>LAB1_Midterm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LAB1_Midterm4.resx">
+      <DependentUpon>LAB1_Midterm4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LAB1_Midterm5.resx">
+      <DependentUpon>LAB1_Midterm5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LAB1_Midterm6.resx">
+      <DependentUpon>LAB1_Midterm6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,6 +155,9 @@
     </Compile>
     <EmbeddedResource Include="samplefrm_connectedDb.resx">
       <DependentUpon>samplefrm_connectedDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SOLIS_QUIZ1.resx">
+      <DependentUpon>SOLIS_QUIZ1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

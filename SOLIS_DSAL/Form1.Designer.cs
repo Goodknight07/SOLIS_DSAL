@@ -60,6 +60,7 @@
             this.exitBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.birthdayTxtbox = new System.Windows.Forms.TextBox();
+            this.viewBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,6 +281,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(660, 50);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 98);
@@ -318,11 +320,22 @@
             this.birthdayTxtbox.Size = new System.Drawing.Size(531, 20);
             this.birthdayTxtbox.TabIndex = 33;
             // 
+            // viewBtn
+            // 
+            this.viewBtn.Location = new System.Drawing.Point(674, 213);
+            this.viewBtn.Name = "viewBtn";
+            this.viewBtn.Size = new System.Drawing.Size(127, 23);
+            this.viewBtn.TabIndex = 34;
+            this.viewBtn.Text = "VIEW";
+            this.viewBtn.UseVisualStyleBackColor = true;
+            this.viewBtn.Click += new System.EventHandler(this.viewBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 339);
+            this.Controls.Add(this.viewBtn);
             this.Controls.Add(this.birthdayTxtbox);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.submitBtn);
@@ -397,6 +410,7 @@
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox birthdayTxtbox;
+        private System.Windows.Forms.Button viewBtn;
     }
 }
 

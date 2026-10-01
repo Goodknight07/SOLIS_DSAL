@@ -103,5 +103,11 @@ namespace SOLIS_DSAL
             picturepath = openFileDialog1.FileName;
            
         }
+
+        private void viewBtn_Click(object sender, EventArgs e)
+        {
+            Form3 registred = new Form3();
+            registred.Show();
+        }
     }
 }
