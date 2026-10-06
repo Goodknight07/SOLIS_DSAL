@@ -30,7 +30,6 @@
         {
             this.birthdayTxtbox = new System.Windows.Forms.TextBox();
             this.exitBtn = new System.Windows.Forms.Button();
-            this.submitBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StatusCMB = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,7 +59,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.EIDtxtbox = new System.Windows.Forms.TextBox();
             this.UpdateBtn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // birthdayTxtbox
@@ -72,21 +73,12 @@
             // 
             // exitBtn
             // 
-            this.exitBtn.Location = new System.Drawing.Point(662, 260);
+            this.exitBtn.Location = new System.Drawing.Point(662, 231);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(127, 23);
             this.exitBtn.TabIndex = 63;
             this.exitBtn.Text = "EXIT";
             this.exitBtn.UseVisualStyleBackColor = true;
-            // 
-            // submitBtn
-            // 
-            this.submitBtn.Location = new System.Drawing.Point(662, 231);
-            this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(127, 23);
-            this.submitBtn.TabIndex = 62;
-            this.submitBtn.Text = "SUBMIT";
-            this.submitBtn.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -95,6 +87,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(150, 98);
             this.pictureBox1.TabIndex = 61;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // StatusCMB
             // 
@@ -319,15 +312,24 @@
             this.UpdateBtn.UseVisualStyleBackColor = true;
             this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 361);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(620, 242);
+            this.dataGridView1.TabIndex = 66;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 450);
+            this.ClientSize = new System.Drawing.Size(813, 636);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.birthdayTxtbox);
             this.Controls.Add(this.exitBtn);
-            this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.StatusCMB);
             this.Controls.Add(this.label10);
@@ -360,6 +362,7 @@
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,7 +372,6 @@
 
         private System.Windows.Forms.TextBox birthdayTxtbox;
         private System.Windows.Forms.Button exitBtn;
-        private System.Windows.Forms.Button submitBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox StatusCMB;
         private System.Windows.Forms.Label label10;
@@ -399,5 +401,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox EIDtxtbox;
         private System.Windows.Forms.Button UpdateBtn;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
