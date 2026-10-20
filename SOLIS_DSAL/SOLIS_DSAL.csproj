@@ -111,6 +111,12 @@
     </Compile>
     <Compile Include="sampleFrm_database_class.cs" />
     <Compile Include="sampleFrm_database_functions.cs" />
+    <Compile Include="SOLIS_MIDTERMQUIZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SOLIS_MIDTERMQUIZ.Designer.cs">
+      <DependentUpon>SOLIS_MIDTERMQUIZ.cs</DependentUpon>
+    </Compile>
     <Compile Include="SOLIS_QUIZ1.cs">
       <SubType>Form</SubType>
     </Compile>

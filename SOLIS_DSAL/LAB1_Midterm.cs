@@ -19,17 +19,19 @@ namespace SOLIS_DSAL
 
         private void LAB1_Midterm_Load(object sender, EventArgs e)
         {
+            DataTable students = new DataTable();
             //create datagridview columns
-            dataGridView1.Columns.Add("ID", "Student ID");
-            dataGridView1.Columns.Add("Name", "Student Name");
-            dataGridView1.Columns.Add("Course", "Course");
+            students.Columns.Add("ID", typeof(int));
+            students.Columns.Add("Name", typeof(string));
+            students.Columns.Add("Course", typeof(string));
 
             //add sample data
-            dataGridView1.Rows.Add("1001", "Juan Dela Cruz", "BSIT");
-            dataGridView1.Rows.Add("1002", "Maria Santos", "BSCS");
-            dataGridView1.Rows.Add("1003", "Pedro Reyes", "BSIS");
-            dataGridView1.Rows.Add("1004", "Ana Garcia", "BSIT");
-            dataGridView1.Rows.Add("1005", "Carlo Mendoza", "BSCS");
+            students.Rows.Add("1001", "Juan Dela Cruz", "BSIT");
+            students.Rows.Add("1002", "Maria Santos", "BSCS");
+            students.Rows.Add("1003", "Pedro Reyes", "BSIS");
+            students.Rows.Add("1004", "Ana Garcia", "BSIT");
+            students.Rows.Add("1005", "Carlo Mendoza", "BSCS");
+            dataGridView1.DataSource = students;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -77,7 +79,45 @@ namespace SOLIS_DSAL
                     "Sequential Search",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
-            }    
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            runSearch(SentinelSearch);
+        }
+
+        private void runSearch(Func<DataTable, string, int> search)
+        {
+            var table = (DataTable)dataGridView1.DataSource;
+            int index = search(table, txtSearch.Text.Trim());
+            dataGridView1.ClearSelection();
+            if (index >= 0)
+            {
+                dataGridView1.Rows[index].Selected = true;
+                dataGridView1.FirstDisplayedScrollingRowIndex = index;
+            }
+            MessageBox.Show(index < 0 ? "Not Found" : "Found!");
+        }
+
+        private int SentinelSearch(DataTable table, string key)
+        {
+            var names = table.AsEnumerable()
+                 .Select(r => r["Name"].ToString())
+                 .ToList();
+
+            int originalCount = names.Count;
+            names.Add(key);
+            int i = 0;
+            while (!string.Equals(names[i], key, StringComparison.OrdinalIgnoreCase))
+                i++;
+
+            return i < originalCount ? i : -1;
         }
     }
 }

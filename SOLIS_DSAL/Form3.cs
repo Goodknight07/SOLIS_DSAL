@@ -87,10 +87,10 @@ namespace SOLIS_DSAL
 
             bool found = false;
 
-            //sequential search
+            
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                //ignore the empty new row
+                
                 if (dataGridView1.Rows[1].IsNewRow)
                     continue;
 
@@ -100,11 +100,11 @@ namespace SOLIS_DSAL
                 if (studentName.Equals(searchValue,
                     StringComparison.OrdinalIgnoreCase))
                 {
-                    //select the matching row
+                    
                     dataGridView1.ClearSelection();
                     dataGridView1.Rows[i].Selected = true;
 
-                    //move datagridview to the matching record
+                    
                     dataGridView1.CurrentCell =
                         dataGridView1.Rows[i].Cells["last_name"];
 
@@ -342,5 +342,82 @@ namespace SOLIS_DSAL
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string searchValue = txtSearch.Text.Trim();
+
+           
+            DataTable dt = dataGridView1.DataSource as DataTable;
+            if (dataGridView1.DataSource is BindingSource bs)
+            {
+                dt = bs.DataSource as DataTable;
+            }
+
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                MessageBox.Show("The data source is empty or invalid.");
+                return;
+            }
+
+            int rowCount = dt.Rows.Count;
+            int lastIndex = rowCount - 1;
+
+            
+            object originalValue = dt.Rows[lastIndex]["last_name"];
+
+            dt.Rows[lastIndex]["last_name"] = searchValue;
+
+            int i = 0;
+            while (true)
+            {
+                string studentName = dt.Rows[i]["last_name"]?.ToString() ?? "";
+
+                if (studentName.Equals(searchValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
+                i++;
+            }
+
+            
+            dt.Rows[lastIndex]["last_name"] = originalValue;
+
+            
+            bool found = false;
+            if (i < lastIndex)
+            {
+                found = true;
+            }
+            else if (i == lastIndex)
+            {
+                string originalString = originalValue?.ToString() ?? "";
+                if (originalString.Equals(searchValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    found = true;
+                }
+            }
+
+            
+            if (found)
+            {
+                dataGridView1.ClearSelection();
+                dataGridView1.Rows[i].Selected = true;
+
+                
+                dataGridView1.CurrentCell = dataGridView1.Rows[i].Cells["last_name"];
+
+                MessageBox.Show(
+                    "Record found at row " + (i + 1)
+                    );
+            }
+            else
+            {
+                MessageBox.Show("Record not found.");
+            }
+        }
+
     }
 }
+    
+
