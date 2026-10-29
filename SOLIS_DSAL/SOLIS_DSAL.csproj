@@ -111,6 +111,18 @@
     </Compile>
     <Compile Include="sampleFrm_database_class.cs" />
     <Compile Include="sampleFrm_database_functions.cs" />
+    <Compile Include="SOLIS_EXAM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SOLIS_EXAM.Designer.cs">
+      <DependentUpon>SOLIS_EXAM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SOLIS_EXAM_RECEIPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SOLIS_EXAM_RECEIPT.Designer.cs">
+      <DependentUpon>SOLIS_EXAM_RECEIPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="SOLIS_MIDTERMQUIZ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +173,12 @@
     </Compile>
     <EmbeddedResource Include="samplefrm_connectedDb.resx">
       <DependentUpon>samplefrm_connectedDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SOLIS_EXAM.resx">
+      <DependentUpon>SOLIS_EXAM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SOLIS_EXAM_RECEIPT.resx">
+      <DependentUpon>SOLIS_EXAM_RECEIPT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SOLIS_QUIZ1.resx">
       <DependentUpon>SOLIS_QUIZ1.cs</DependentUpon>
