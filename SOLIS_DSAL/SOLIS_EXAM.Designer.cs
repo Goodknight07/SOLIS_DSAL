@@ -78,8 +78,9 @@
             this.LastTxt = new System.Windows.Forms.TextBox();
             this.FirstTxt = new System.Windows.Forms.TextBox();
             this.CurrentchargeTxt = new System.Windows.Forms.TextBox();
-            this.CalculateTxt = new System.Windows.Forms.Button();
+            this.PrintTxt = new System.Windows.Forms.Button();
             this.DisplayTxt = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // MayniladTxtbox
@@ -116,6 +117,7 @@
             this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Contract Account No:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -237,6 +239,8 @@
             this.ConsumptionTxt.Name = "ConsumptionTxt";
             this.ConsumptionTxt.Size = new System.Drawing.Size(487, 20);
             this.ConsumptionTxt.TabIndex = 23;
+            this.ConsumptionTxt.TextChanged += new System.EventHandler(this.ConsumptionTxt_TextChanged);
+            this.ConsumptionTxt.Leave += new System.EventHandler(this.ConsumptionTxt_Leave);
             // 
             // label11
             // 
@@ -501,15 +505,15 @@
             this.CurrentchargeTxt.Size = new System.Drawing.Size(223, 20);
             this.CurrentchargeTxt.TabIndex = 55;
             // 
-            // CalculateTxt
+            // PrintTxt
             // 
-            this.CalculateTxt.Location = new System.Drawing.Point(639, 524);
-            this.CalculateTxt.Name = "CalculateTxt";
-            this.CalculateTxt.Size = new System.Drawing.Size(147, 23);
-            this.CalculateTxt.TabIndex = 56;
-            this.CalculateTxt.Text = "CALCULATE";
-            this.CalculateTxt.UseVisualStyleBackColor = true;
-            this.CalculateTxt.Click += new System.EventHandler(this.CalculateTxt_Click);
+            this.PrintTxt.Location = new System.Drawing.Point(639, 524);
+            this.PrintTxt.Name = "PrintTxt";
+            this.PrintTxt.Size = new System.Drawing.Size(147, 23);
+            this.PrintTxt.TabIndex = 56;
+            this.PrintTxt.Text = "PRINT RECEIPT";
+            this.PrintTxt.UseVisualStyleBackColor = true;
+            this.PrintTxt.Click += new System.EventHandler(this.CalculateTxt_Click);
             // 
             // DisplayTxt
             // 
@@ -519,13 +523,23 @@
             this.DisplayTxt.Size = new System.Drawing.Size(505, 20);
             this.DisplayTxt.TabIndex = 57;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(808, 17);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(474, 771);
+            this.listBox1.TabIndex = 58;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
             // SOLIS_EXAM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1294, 792);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.DisplayTxt);
-            this.Controls.Add(this.CalculateTxt);
+            this.Controls.Add(this.PrintTxt);
             this.Controls.Add(this.CurrentchargeTxt);
             this.Controls.Add(this.FirstTxt);
             this.Controls.Add(this.LastTxt);
@@ -636,7 +650,8 @@
         private System.Windows.Forms.TextBox LastTxt;
         private System.Windows.Forms.TextBox FirstTxt;
         private System.Windows.Forms.TextBox CurrentchargeTxt;
-        private System.Windows.Forms.Button CalculateTxt;
+        private System.Windows.Forms.Button PrintTxt;
         private System.Windows.Forms.TextBox DisplayTxt;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

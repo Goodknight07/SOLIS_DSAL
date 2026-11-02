@@ -28,22 +28,17 @@ namespace SOLIS_DSAL
             basic_charge = 0.00,
             tax = 0.025;
 
-        private void MayniladTxtbox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void TotalamountTxt_TextChanged(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void CalculateTxt_Click(object sender, EventArgs e)
+        private void ConsumptionTxt_Leave(object sender, EventArgs e)
         {
             consumption = Convert.ToDouble(ConsumptionTxt.Text);
             basic_charge = rate_meter * consumption;
@@ -66,8 +61,38 @@ namespace SOLIS_DSAL
             CurrentchargeTxt.Text = TotalamountTxt.Text;
 
             LastTxt.Text = ReadingdateTxt.Text;
-            //
+        }
+
+        private void ConsumptionTxt_TextChanged(object sender, EventArgs e)
+        {
             
+        }
+
+        private void MayniladTxtbox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TotalamountTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void CalculateTxt_Click(object sender, EventArgs e)
+        {
+            DisplayInputs();
+
+            SOLIS_EXAM_RECEIPT receipt = new SOLIS_EXAM_RECEIPT();
+
+            receipt.source = this;
+            receipt.DisplayReceipt(listBox1);
+
+            receipt.ShowDialog();
         }
 
         private void SOLIS_EXAM_Load(object sender, EventArgs e)
@@ -86,5 +111,43 @@ namespace SOLIS_DSAL
         {
 
         }
+
+        private void DisplayInputs()
+        {
+            listBox1.Items.Clear();
+
+            listBox1.Items.Add("========== WATER BILL RECEIPT ==========");
+            listBox1.Items.Add("");
+
+            listBox1.Items.Add("SERVICE INFORMATION");
+            listBox1.Items.Add("Contract Account No.: " + AccnameTxt.Text);
+            listBox1.Items.Add("Account Name: " + AccnameTxt.Text);
+            listBox1.Items.Add("Service Address: " + AdressTxt.Text);
+            listBox1.Items.Add("TIN: " + TinTxt.Text);
+            listBox1.Items.Add("Rate Class: " + RateclassTxt.Text);
+            listBox1.Items.Add("Business Area: " + BusinessAreaTxt.Text);
+
+            listBox1.Items.Add("");
+            listBox1.Items.Add("METERING INFORMATION");
+            listBox1.Items.Add("Meter No.: " + MeternoTxt.Text);
+            listBox1.Items.Add("Reading Date: " + ReadingdateTxt.Text);
+            listBox1.Items.Add("Present Reading: " + PresreadingTxt.Text);
+            listBox1.Items.Add("Previous Reading: " + PrevreadingTxt.Text);
+            listBox1.Items.Add("Consumption: " + ConsumptionTxt.Text + " cu.m");
+
+            listBox1.Items.Add("");
+            listBox1.Items.Add("BILLING SUMMARY");
+            listBox1.Items.Add("Billing Period: " + FirstTxt.Text + " to " + LastTxt.Text);
+
+            listBox1.Items.Add("Basic Charge: " + BasicchargeTxt.Text);
+            listBox1.Items.Add("Environmental Charge: " + EnvichargeTxt.Text);
+            listBox1.Items.Add("Maintenance Charge: " + MaintenacechargeTxt.Text);
+            listBox1.Items.Add("Total Charges Before Tax: " + TotalcurrentchargeTxt.Text);
+            listBox1.Items.Add("Government Tax: " + GovtaxTxt.Text);
+
+            listBox1.Items.Add("");
+            listBox1.Items.Add("TOTAL AMOUNT: " + TotalamountTxt.Text);
+        }
     }
+
 }

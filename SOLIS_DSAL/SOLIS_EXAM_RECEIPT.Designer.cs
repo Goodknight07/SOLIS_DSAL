@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.RECEIPT = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // RECEIPT
+            // listBox1
             // 
-            this.RECEIPT.FormattingEnabled = true;
-            this.RECEIPT.Location = new System.Drawing.Point(12, 12);
-            this.RECEIPT.Name = "RECEIPT";
-            this.RECEIPT.Size = new System.Drawing.Size(375, 628);
-            this.RECEIPT.TabIndex = 0;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 12);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(375, 628);
+            this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // SOLIS_EXAM_RECEIPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 661);
-            this.Controls.Add(this.RECEIPT);
+            this.Controls.Add(this.listBox1);
             this.Name = "SOLIS_EXAM_RECEIPT";
             this.Text = "SOLIS_EXAM_RECEIPT";
             this.Load += new System.EventHandler(this.SOLIS_EXAM_RECEIPT_Load);
@@ -54,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox RECEIPT;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
