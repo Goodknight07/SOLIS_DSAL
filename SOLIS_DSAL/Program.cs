@@ -16,7 +16,7 @@ namespace SOLIS_DSAL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SOLIS_EXAM());
+            Application.Run(new LAB_7_FINALS());
         }
     }
 }

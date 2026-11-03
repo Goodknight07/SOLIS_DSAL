@@ -116,7 +116,8 @@ namespace SOLIS_DSAL
         {
             listBox1.Items.Clear();
 
-            listBox1.Items.Add("========== WATER BILL RECEIPT ==========");
+            listBox1.Items.Add("MAYNILAD WATER SERVICE INC");
+            listBox1.Items.Add("8390 DR A  SANTOS AVE BF HOMES");
             listBox1.Items.Add("");
 
             listBox1.Items.Add("SERVICE INFORMATION");
@@ -147,6 +148,7 @@ namespace SOLIS_DSAL
 
             listBox1.Items.Add("");
             listBox1.Items.Add("TOTAL AMOUNT: " + TotalamountTxt.Text);
+            listBox1.Items.Add("PAYMENT DUE DATE: " + PaymentdueTxt.Text);
         }
     }
 
