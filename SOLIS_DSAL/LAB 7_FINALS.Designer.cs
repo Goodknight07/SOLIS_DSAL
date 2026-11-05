@@ -46,7 +46,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.TinTxt = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.AdressTxt = new System.Windows.Forms.TextBox();
+            this.addressTxt = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.AccnameTxt = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -95,6 +95,8 @@
             this.BubblesortBtn = new System.Windows.Forms.Button();
             this.QuicksortBtn = new System.Windows.Forms.Button();
             this.InsertionsortBtn = new System.Windows.Forms.Button();
+            this.saoTxt = new System.Windows.Forms.TextBox();
+            this.MonthTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -168,25 +170,26 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(131, 160);
+            this.label6.Location = new System.Drawing.Point(180, 167);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 13);
+            this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 7;
-            this.label6.Text = "SAO # 00000000003456789012";
+            this.label6.Text = "SAO #";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(319, 211);
+            this.label7.Location = new System.Drawing.Point(180, 221);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(159, 13);
+            this.label7.Size = new System.Drawing.Size(91, 13);
             this.label7.TabIndex = 9;
-            this.label7.Text = "For the Month of: February 2024";
+            this.label7.Text = "For the Month of: ";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(333, 198);
+            this.label8.Location = new System.Drawing.Point(180, 196);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(145, 13);
             this.label8.TabIndex = 8;
@@ -254,16 +257,16 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(180, 341);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 13);
+            this.label13.Size = new System.Drawing.Size(87, 13);
             this.label13.TabIndex = 19;
-            this.label13.Text = "Service Adress:";
+            this.label13.Text = "Service Address:";
             // 
-            // AdressTxt
+            // addressTxt
             // 
-            this.AdressTxt.Location = new System.Drawing.Point(312, 338);
-            this.AdressTxt.Name = "AdressTxt";
-            this.AdressTxt.Size = new System.Drawing.Size(276, 20);
-            this.AdressTxt.TabIndex = 18;
+            this.addressTxt.Location = new System.Drawing.Point(312, 338);
+            this.addressTxt.Name = "addressTxt";
+            this.addressTxt.Size = new System.Drawing.Size(276, 20);
+            this.addressTxt.TabIndex = 18;
             // 
             // label14
             // 
@@ -458,6 +461,7 @@
             this.FirstTxt.Name = "FirstTxt";
             this.FirstTxt.Size = new System.Drawing.Size(105, 20);
             this.FirstTxt.TabIndex = 74;
+            this.FirstTxt.TextChanged += new System.EventHandler(this.FirstTxt_TextChanged);
             // 
             // LastTxt
             // 
@@ -619,6 +623,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1109, 299);
             this.dataGridView1.TabIndex = 76;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CalculateBtn
             // 
@@ -638,6 +643,7 @@
             this.SaveBtn.TabIndex = 78;
             this.SaveBtn.Text = "SAVE";
             this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // SelectionsortBtn
             // 
@@ -675,11 +681,27 @@
             this.InsertionsortBtn.Text = "INSERTION SORT";
             this.InsertionsortBtn.UseVisualStyleBackColor = true;
             // 
+            // saoTxt
+            // 
+            this.saoTxt.Location = new System.Drawing.Point(225, 160);
+            this.saoTxt.Name = "saoTxt";
+            this.saoTxt.Size = new System.Drawing.Size(203, 20);
+            this.saoTxt.TabIndex = 83;
+            // 
+            // MonthTxt
+            // 
+            this.MonthTxt.Location = new System.Drawing.Point(273, 214);
+            this.MonthTxt.Name = "MonthTxt";
+            this.MonthTxt.Size = new System.Drawing.Size(155, 20);
+            this.MonthTxt.TabIndex = 84;
+            // 
             // LAB_7_FINALS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 1061);
+            this.Controls.Add(this.MonthTxt);
+            this.Controls.Add(this.saoTxt);
             this.Controls.Add(this.QuicksortBtn);
             this.Controls.Add(this.InsertionsortBtn);
             this.Controls.Add(this.SelectionsortBtn);
@@ -731,7 +753,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.TinTxt);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.AdressTxt);
+            this.Controls.Add(this.addressTxt);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.AccnameTxt);
             this.Controls.Add(this.label15);
@@ -777,7 +799,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox TinTxt;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox AdressTxt;
+        private System.Windows.Forms.TextBox addressTxt;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox AccnameTxt;
         private System.Windows.Forms.Label label15;
@@ -826,5 +848,7 @@
         private System.Windows.Forms.Button BubblesortBtn;
         private System.Windows.Forms.Button QuicksortBtn;
         private System.Windows.Forms.Button InsertionsortBtn;
+        private System.Windows.Forms.TextBox saoTxt;
+        private System.Windows.Forms.TextBox MonthTxt;
     }
 }
