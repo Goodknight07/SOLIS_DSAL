@@ -235,6 +235,7 @@
             this.RateclassTxt.Name = "RateclassTxt";
             this.RateclassTxt.Size = new System.Drawing.Size(276, 20);
             this.RateclassTxt.TabIndex = 22;
+            this.RateclassTxt.TextChanged += new System.EventHandler(this.RateclassTxt_TextChanged);
             // 
             // label12
             // 

@@ -70,6 +70,12 @@
     <Compile Include="LAB 7_FINALS.Designer.cs">
       <DependentUpon>LAB 7_FINALS.cs</DependentUpon>
     </Compile>
+    <Compile Include="LAB 7_RECEIPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LAB 7_RECEIPT.Designer.cs">
+      <DependentUpon>LAB 7_RECEIPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="LAB1_Midterm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LAB 7_FINALS.resx">
       <DependentUpon>LAB 7_FINALS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LAB 7_RECEIPT.resx">
+      <DependentUpon>LAB 7_RECEIPT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LAB1_Midterm.resx">
       <DependentUpon>LAB1_Midterm.cs</DependentUpon>

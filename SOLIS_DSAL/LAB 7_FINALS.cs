@@ -27,7 +27,10 @@ namespace SOLIS_DSAL
 
             connectionstring = "Data Source = C203-02; Initial Catalog = WaterBillDB; user id = SA; password = B1Admin123@";
             connection = new SqlConnection(connectionstring);
-         
+
+
+
+
         }
 
         double rate_meter = 23.52,
@@ -51,50 +54,45 @@ namespace SOLIS_DSAL
         {
             connection.Open();
 
-            
-            sql = "INSERT INTO customerInfoTbl (contract_no, account_name, service_address, TIN, rate_class, Business_area, SAO_no, SAO_month) VALUES ('" + AccnumTxt.Text + "', '" + AccnameTxt.Text + "', '" + addressTxt.Text + "', '" + TinTxt.Text + "', '" + RateclassTxt.Text + "', '" + BusinessAreaTxt.Text + "', '" + saoTxt.Text + "', '" + MonthTxt.Text + "')";
-            command = new SqlCommand(sql, connection);
-            command.CommandType = CommandType.Text;
-            adaptersql = new SqlDataAdapter();
-            adaptersql.InsertCommand = command;
-            command.ExecuteNonQuery();
 
-            
-            sql = "INSERT INTO meterTbl (contract_no, meter_no, reading_date, present_reading, previous_reading, consumption) VALUES ('" + AccnumTxt.Text + "', '" + MeternoTxt.Text + "', '" + ReadingdateTxt.Text + "', '" + PresreadingTxt.Text + "', '" + PrevreadingTxt.Text + "', '" + ConsumptionTxt.Text + "')";
-            command = new SqlCommand(sql, connection);
-            command.CommandType = CommandType.Text;
-            adaptersql = new SqlDataAdapter();
-            adaptersql.InsertCommand = command;
-            command.ExecuteNonQuery();
+              sql = "INSERT INTO customerInfoTbl (contract_no, account_name, service_address, TIN, rate_class, Business_area, SAO_no, SAO_month) VALUES ('" + AccnumTxt.Text + "', '" + AccnameTxt.Text + "', '" + addressTxt.Text + "', '" + TinTxt.Text + "', '" + RateclassTxt.Text + "', '" + BusinessAreaTxt.Text + "', '" + saoTxt.Text + "', '" + MonthTxt.Text + "')";
+             command = new SqlCommand(sql, connection);
+             command.CommandType = CommandType.Text;
+             adaptersql = new SqlDataAdapter();
+             adaptersql.InsertCommand = command;
+             command.ExecuteNonQuery();
 
-            
-            sql = "INSERT INTO paymentTbl (contract_no, billing_periodF, billing_periodL, current_charges, basic_charge, environmental_charge, MSC, total_current_charges_before_taxes, government_tax, total_amount_due, payment_due_date) VALUES ('" + AccnumTxt.Text + "', '" + FirstTxt.Text + "', '" + LastTxt.Text + "', '" + CurrentchargeTxt.Text + "', '" + BasicchargeTxt.Text + "', '" + EnvichargeTxt.Text + "', '" + MaintenacechargeTxt.Text + "', '" + TotalcurrentchargeTxt.Text + "', '" + GovtaxTxt.Text + "', '" + TotalamountTxt.Text + "', '" + FirstTxt.Text + "')";
-            command = new SqlCommand(sql, connection);
-            command.CommandType = CommandType.Text;
-            adaptersql = new SqlDataAdapter();
-            adaptersql.InsertCommand = command;
-            command.ExecuteNonQuery();
 
-            
-            sql = "SELECT c.SAO_no AS [customer SOA number], c.account_name AS [customer name], c.service_address AS [customer address], m.meter_no AS [meter no.], m.reading_date AS [reading date], m.consumption AS [consumption], p.billing_periodF AS [billing period], p.total_amount_due AS [total amount due], p.payment_due_date AS [payment due date] FROM customerInfoTbl c INNER JOIN meterTbl m ON c.contract_no = m.contract_no INNER JOIN paymentTbl p ON c.contract_no = p.contract_no";
-            command = new SqlCommand(sql, connection);
-            command.CommandType = CommandType.Text;
-            adaptersql = new SqlDataAdapter();
-            adaptersql.SelectCommand = command;
-            command.ExecuteNonQuery();
+                sql = "INSERT INTO meterTbl (contract_no, meter_no, reading_date, present_reading, previous_reading, consumption) VALUES ('" + AccnumTxt.Text + "', '" + MeternoTxt.Text + "', '" + ReadingdateTxt.Text + "', '" + PresreadingTxt.Text + "', '" + PrevreadingTxt.Text + "', '" + ConsumptionTxt.Text + "')";
+                command = new SqlCommand(sql, connection);
+                command.CommandType = CommandType.Text;
+                adaptersql = new SqlDataAdapter();
+               adaptersql.InsertCommand = command;
+               command.ExecuteNonQuery();
+
+
+               sql = "INSERT INTO paymentTbl (contract_no, billing_periodF, billing_periodL, current_charges, basic_charge, environmental_charge, MSC, total_current_charges_before_taxes, government_tax, total_amount_due, payment_due_date) VALUES ('" + AccnumTxt.Text + "', '" + FirstTxt.Text + "', '" + LastTxt.Text + "', '" + CurrentchargeTxt.Text + "', '" + BasicchargeTxt.Text + "', '" + EnvichargeTxt.Text + "', '" + MaintenacechargeTxt.Text + "', '" + TotalcurrentchargeTxt.Text + "', '" + GovtaxTxt.Text + "', '" + TotalamountTxt.Text + "', '" + FirstTxt.Text + "')";
+               command = new SqlCommand(sql, connection);
+               command.CommandType = CommandType.Text;
+               adaptersql = new SqlDataAdapter();
+               adaptersql.InsertCommand = command;
+               command.ExecuteNonQuery();
+
+            sql = "SELECT * FROM customerInfoTbl";
+            adaptersql = new SqlDataAdapter(sql, connection);
             dset = new DataSet();
             adaptersql.Fill(dset, "customerInfoTbl");
             dataGridView1.DataSource = dset.Tables["customerInfoTbl"];
-
-            dset = new DataSet();
-            adaptersql.Fill(dset, "customerInfoTbl");
-            dataGridView1.DataSource = dset.Tables["customerInfoTbl"];
-
             connection.Close();
 
         }
 
         private void FirstTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RateclassTxt_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -110,6 +108,44 @@ namespace SOLIS_DSAL
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+            LAB_7_RECEIPT print = new LAB_7_RECEIPT();
+            print.Soa = saoTxt.Text;
+            print.maynilad = MayniladTxt.Text;
+            print.Month = MonthTxt.Text;
+            print.Serviceinfo = MayniladTxt.Text;
+            print.contract = AccnumTxt.Text;
+            print.account = AccnameTxt.Text;
+            print.service = addressTxt.Text;
+            print.Tin = TinTxt.Text;
+            print.rate = RateclassTxt.Text;
+            print.business = BusinessAreaTxt.Text;
+            print.meter = MeternoTxt.Text;
+            print.reading = ReadingdateTxt.Text;
+            print.present = PresreadingTxt.Text;
+            print.previous = PrevreadingTxt.Text;
+            print.Consumption = ConsumptionTxt.Text;
+            print.billstart = FirstTxt.Text;
+            print.billend = LastTxt.Text;
+            print.current = CurrentchargeTxt.Text;
+            print.Basic = BasicchargeTxt.Text;
+            print.environmental = EnvichargeTxt.Text;
+            print.msc = MaintenacechargeTxt.Text;
+            print.beforetax = TotalcurrentchargeTxt.Text;
+            print.government = GovtaxTxt.Text;
+            print.total = "PHP " + TotalamountTxt.Text;
+            print.duedate = FirstTxt.Text;
+            print.Show();
+        }
+
+        private void ConsumptionTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConsumptionTxt_Leave(object sender, EventArgs e)
         {
             consumption = Convert.ToDouble(ConsumptionTxt.Text);
             basic_charge = rate_meter * consumption;
@@ -134,19 +170,9 @@ namespace SOLIS_DSAL
             LastTxt.Text = ReadingdateTxt.Text;
         }
 
-        private void ConsumptionTxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ConsumptionTxt_Leave(object sender, EventArgs e)
-        {
-           
-        }
-
         private void ConsumptionTxt_CursorChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -168,6 +194,21 @@ namespace SOLIS_DSAL
         {
             logo.Image = Image.FromFile("C:\\Users\\C203-02\\Downloads\\maynilad logo.jpg");
             MayniladTxt.Text = "Maynilad Water Services Inc";
+
+            connection.Open();
+
+            sql = "SELECT c.contract_no, c.account_name, c.service_address, c.TIN, c.rate_class, c.Business_area, c.SAO_no, c.SAO_month, m.meter_no, m.reading_date, m.present_reading, m.previous_reading, m.consumption, p.billing_periodF, p.billing_periodL, p.current_charges, p.basic_charge, p.environmental_charge, p.MSC, p.total_current_charges_before_taxes, p.government_tax, p.total_amount_due, p.payment_due_date FROM customerInfoTbl c LEFT JOIN meterTbl m ON c.contract_no = m.contract_no LEFT JOIN paymentTbl p ON c.contract_no = p.contract_no";
+            command = new SqlCommand(sql, connection);
+            command.CommandType = CommandType.Text;
+            adaptersql = new SqlDataAdapter();
+            adaptersql.SelectCommand = command;
+
+            dset = new DataSet();
+            adaptersql.Fill(dset, "customerInfoTbl");
+            dataGridView1.DataSource = dset.Tables["customerInfoTbl"];
+
+            connection.Close();
         }
     }
 }
+
